@@ -4,125 +4,99 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Commute Compute</title>
-      <link rel="stylesheet" type="text/css" href="css/reset.css">
+      <title>Compute Commute</title>
+      <!-- Resetting Browser default style -->
+      <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+      <!-- Bootstrap Stylesheet; Latest compiled and minified CSS --> 
       <link href='https://fonts.googleapis.com/css?family=Walter+Turncoat' rel='stylesheet' type='text/css'>
-      <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+      <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
       <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
-      <script src='js/bootstrap.js'></script>
-      <!-- Latest compiled and minified CSS -->
- <!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-      <!-- Optional theme -->
- <!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
-      <!-- Latest compiled and minified JavaScript -->
- <!--     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script> -->
-
-      <!-- Latest compiled and minified CSS -->
-<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-
-<!-- Optional theme -->
-<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
-
-<!-- Latest compiled and minified JavaScript -->
-<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
-
-<!--      the following requires jQuery reference
-<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script> -->
-<!--      <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
-      <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script> -->
+      <script src='assets/javascript/bootstrap.js'></script>
+      <!-- Custom Stylesheet -->
+      <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+      <!--  -->
+      <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+      <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+      <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     </head>
     <body>
-      <div class="container">
-       <!--<div class="jumbotran vertical-center"> -->
-        <div id="title" class="col-md-12"><h1>Commute Compute</h1></div>     
-        <div id="introduction" class="col-md-12"><p><h4><em>Spending too much money on the gas?</em> Ever wonder how much would the gas cost going places? Well, the answer is in this little app which calculates the cost of gas before you travel. Now your travel finances are in your own hand!</h4></p></div>   
-       <!--</div> -->       
-     
-    <!-- Jumbotron -->
+      <div class="container well well-lg">
+       <div class="row text-left text-justify">
+
+        <div id="title" class="col-md-12 ">
+          <i class="glyphicon glyphicon-road"></i><i class="glyphicon glyphicon-usd"></i><h1>Compute Commute</h1>
+        </div> 
+        </div>
+        <div class="row well well-lg">  
+          <div id="intro" class="col-md-10 col-md-offset-1">
+          <p class="lead intro"><h4><em>Spending too much money on the gas?</em> <i class="glyphicon glyphicon-fire"></i>  Ever wonder how much would the gas cost going places? Well, the answer is in this little app which calculates the cost of gas before you travel. Now your travel finances are in your own hand!</h4></p>
+          </div>   
+        </div>      
       <!--<div class="container-fluid"> -->
- 
-      <div class="userInput">
-          <div class="row">
-
-              <!-- User Input Panel Heading-->
-              <div class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
-                   <div class="panel panel-input">
-                        <div class="panel-heading">
-                             <h3 class="panel-title">User Input</h3>
-                        </div>
-                        <div class="panrl panel-input">
-
-                             <!-- User Input Form -->
-                             <form role="form">
-                               <div class="form-group">
-                                 <label for="text">Starting Address</label>
-                                 <input type="text" class="form-control" id="name-input">
-                               </div>
-                               <div class="form-group">
-                                 <label for="text">Destination Address</label>
-                                 <input type="text" class="form-control" id="destination-input">
-                               </div>
-                               <div class="form-group">
-                                 <label for="text">Vehicle Type?</label>
-                                 <input type="text" class="form-control" id="first-train-time-input">
-                               </div>
+      <div class="section userInput">
+        <div class="row well well-lg">
+          <!-- User Input Panel Heading-->
+          <div class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">User Input</h3>
+              </div>
+                <div class="panel-body">
+              <!-- User Input Form -->
+              <form role="form">
+                <div class="form-group">
+                    <label for="text">Starting Address</label>
+                      <input type="text" required autofocus placeholder="Please type your home address or originating address" class="form-control" id="startAddr">
+                </div>
+                  <div class="form-group">
+                    <label for="text">Destination Address</label>
+                      <input type="text" required autofocus placeholder="Please type your destination address" class="form-control" id="destAddr">
+                  </div>
+                  <div class="form-group">
+                    <label for="text">Vehicle Type?</label>
+                      <input type="text" required autofocus list="Vehicle-Type" placeholder="Please select Vehicle Type" class="form-control" id="vehTypeInput">
+                      <datalist id="Vehicle-Type">
+                        <option value="Car">
+                        <option value="Suburban">
+                        <option value="SUV">
+                        <option value="Pick-up Truck">
+                        <option value="Full Size Truck">
+                      </datalist>                   
+                  </div>
                                
-                               <button type="submit" class="btn btn-primary" id="add-train">Submit</button>
-                             </form>
+                  <button type="button" class="btn btn-primary" id="addInput">Submit</button>
+              </form>
 
-                        </div>  <!-- closes panel-body -->
-                   </div> <!-- closes panel-default -->
-              </div> <!-- closes col-lg-6 -->
-         </div> <!-- closes row -->
-    </div>  <!-- closes container -->
-  </div>  
+                </div> <!-- closes panel-body -->
+              </div> <!-- closes panel-primary -->
+            </div> <!-- closes col-md-10 -->
+          </div> <!-- closes row -->
+        </div> <!-- closes User Input Section -->
 
+      <!--<div class="container endResults">-->
+        <div class="section results">
+          <div class="row well well-lg">
+            <!-- Results Panel-->
+            <div class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Drive Information</h3>
+                </div>
+                <div class="panel-body">
+                  <!-- Presenting Results from APIs-->
+                  <table class=" row driveInfo">
+                    <th class="col-md-3 col-lg-3 milesTraveled"><strong>Miles Traveled</strong></th>
+                    <th class="col-md-3 col-lg-3 gasUsed"><strong>Gas Used</strong></th>
+                    <th class="col-md-3 col-lg-3 gasCost"><strong>Gas Cost $ (Avg)</strong></th>
+                    <th class="col-md-3 col-lg-3 moneySpent"><strong>Spent $</strong></th>
+                  </table>
 
-
-      <div class="container endResults">
-          <div class="row">
-
-              <!-- Sign-Up Panel-->
-              <div class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
-                   <div class="panel panel-primary">
-                        <div class="panel-heading">
-                             <h3 class="panel-title">Drive Information</h3>
-                        </div>
-                        <div class="panel-body">
-
-                             <!-- Sign-up Form (note the various input "types")-->
-                        <table class="driveInfo">
-                                  <th class="col-xs-3">Miles Traveled
-                                  </th>
-                                  <th class="col-xs-2">Gas Used
-                                  </th>
-                                  <th class="col-xs-2">Gas Cost $ (Avg)
-                                  </th>
-                                  <th class="col-xs-2">Spent $
-                                  </th>
-                                  
-                        </table>
-
-                        </div>  <!-- closes panel-body -->
-                   </div> <!-- closes panel-default -->
-              </div> <!-- closes col-lg-6 -->
-         </div> <!-- closes row -->
-    </div>  <!-- closes container -->
-
-<!--    <div class="buttonsHere"></div>
-                  <div class="row">
-                    <div class="col-sm-12">
-                        <form id="adding">
-                            <input type="text" placeholder="Add a button" id="buttonCategory">
-                            <input type="submit" value="Add" id="addButton">
-                        </form>
-                    </div>
-                   </div>
-                 <br> 
-               <div class="gifsHere"></div>
-            </div>
-        </div> -->    
-        <script src="js/script.js"></script>
+                </div>  <!-- closes panel-body -->
+              </div> <!-- closes panel-default -->
+            </div> <!-- closes col-lg-6 -->
+          </div> <!-- closes row -->
+        </div> <!-- closes container 'results' -->
+      </div>
+    <!--    <script src="assets/javascript/script.js"></script>  -->
     </body>
 </html>
