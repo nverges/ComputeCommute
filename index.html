@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<!--Import Google Icon Font-->
-	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 	<!-- Materialize compiled and minified CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
@@ -16,17 +16,66 @@
 
 	<title>Compute Commute</title>
 </head>
+
 <body>
-	
-	
 	
 	<!-- Link to JQuery -->
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<!-- Materialize compiled and minified JavaScript -->
+<<<<<<< HEAD
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 	<script src="https://apis.google.com/js/api.js"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1OOhBh_6U5kTj5PnnUz8DeBuFalZ9Uhg&libraries=places"></script>
 	<script type="text/javascript" src="assets/javascript/script.js"></script>
+=======
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script> -->
+
+	<!-- <script type="text/javascript" src="assets/javascript/script.js"></script> -->
+
+<script src="https://apis.google.com/js/api.js"></script>
+<script>
+
+$(document).ready(function() {
+
+	// const placesApiKey = 'AIzaSyCgqz_-JkZ-48Qihj__Tl29ZddXQKXs9d4';
+	// let latitude = 33.299878;
+	// let longitude = -111.841754;
+	// // Radius in meters
+	// let radius = 1609.34;
+	// let queryUrl = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=33.299878,-111.841754&radius=500&type=gas_station&key=AIzaSyA3LZgFbGgX49E8jhWFSFFp_psnAt1ju_c`;
+
+
+function start() {
+  // 2. Initialize the JavaScript client library.
+  gapi.client.init({
+    'apiKey': 'AIzaSyCgqz_-JkZ-48Qihj__Tl29ZddXQKXs9d4',
+    // Your API key will be automatically added to the Discovery Document URLs.
+    'discoveryDocs': ['https://people.googleapis.com/$discovery/rest'],
+    // clientId and scope are optional if auth is not required.
+    // 'clientId': '495925877872-fqn19uj41vjebl247brmht55lvipok84.apps.googleusercontent.com',
+    // 'scope': 'profile',
+  }).then(function() {
+    // 3. Initialize and make the API request.
+    return gapi.client.people.people.get({
+      'resourceName': 'people/me',
+      'requestMask.includeField': 'person.names'
+    });
+  }).then(function(response) {
+    console.log(response.result);
+  }, function(reason) {
+    // console.log('Error: ' + reason.result.error.message);
+  });
+};
+
+// 1. Load the JavaScript client library.
+gapi.load('client', start);
+
+});
+
+</script>
+    
+	
+>>>>>>> 3d55d6280902c00f10db31d34a38d729f4386eb0
 
 </body>
 </html>
