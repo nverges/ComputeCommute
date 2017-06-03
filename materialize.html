@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Compute your Commute</title>
+
+	  <!-- Compiled and minified CSS -->
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+	  <!-- Compiled and minified JavaScript -->
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+
+        <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+      <style>
+      	.waves-effect {
+      		margin-left: 75px;
+      		align-items: center;
+      		margin-bottom: 25px;
+      	}
+
+      	#buttons {
+      		text-align: center;
+      	}
+
+      	#inputAddress {
+      		text-align: center;
+      	}
+
+      	#map {
+      		text-align: center;
+      	}
+
+      	.card {
+      		align-content: center;
+      	}
+
+      </style>
+
+</head>
+<body>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Compute your Commute!!!</a>
+
+    </div>
+  </nav>
+        
+
+    <div class="container">
+
+	       <div class="row">
+	        <div class="col s12" id="inputAddress">
+	          What is your work address?
+	          <div class="input-field inline">
+	            <input id="email" type="email" class="validate">
+	            <label for="email" data-error="wrong" data-success="right">Address</label>
+	          </div>
+	      </div>
+
+		<div id="buttons">
+			<a class="waves-effect waves-light btn-large">Hybrid</a>
+			<a class="waves-effect waves-light btn-large">Sedan</a>
+			<a class="waves-effect waves-light btn-large">Gas-Guzzler</a>
+		</div>
+
+
+		  <div class="row">
+		    <div class="col s12 m6">
+		      <div class="card">
+		        <div class="card-image">
+		          <img src="http://via.placeholder.com/350x150">
+		          <span class="card-title">Card Title</span>
+		          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+		        </div>
+		        <div class="card-content">
+		          <p>Display Map here</p>
+		        </div>
+		      </div>
+		    </div>
+
+		  </div>
+
+   
+
+      <table class="striped">
+        <thead>
+          <tr>
+              <th>Gas Used </th>
+              <th>Distance Traveled</th>
+              <th>$$ spent</th>
+              <th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Alvin</td>
+            <td>Eclair</td>
+            <td>$0.87</td>
+          </tr>
+          <tr>
+            <td>Alan</td>
+            <td>Jellybean</td>
+            <td>$3.76</td>
+          </tr>
+          <tr>
+            <td>Jonathan</td>
+            <td>Lollipop</td>
+            <td>$7.00</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <div id="map"></div>
+
+
+
+<script type="text/javascript">
+
+
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 33.448376, lng: -112.074036},
+          zoom: 13
+        });
+
+
+
+        var input = document.getElementById('pac-input');
+
+        var autocomplete = new google.maps.places.Autocomplete(input);
+        autocomplete.bindTo('bounds', map);
+
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+        var infowindow = new google.maps.InfoWindow();
+        var infowindowContent = document.getElementById('infowindow-content');
+        infowindow.setContent(infowindowContent);
+        var marker = new google.maps.Marker({
+          map: map
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+
+        autocomplete.addListener('place_changed', function() {
+          infowindow.close();
+          var place = autocomplete.getPlace();
+          if (!place.geometry) {
+            return;
+          }
+
+          if (place.geometry.viewport) {
+            map.fitBounds(place.geometry.viewport);
+          } else {
+            map.setCenter(place.geometry.location);
+            map.setZoom(17);
+          }
+
+          // Set the position of the marker using the place ID and location.
+          marker.setPlace({
+            placeId: place.place_id,
+            location: place.geometry.location
+          });
+          marker.setVisible(true);
+
+          infowindowContent.children['place-name'].textContent = place.name;
+          infowindowContent.children['place-id'].textContent = place.place_id;
+          infowindowContent.children['place-address'].textContent =
+              place.formatted_address;
+          infowindow.open(map, marker);
+        });
+
+        {
+  origin: 'Chicago, IL',
+  destination: 'Los Angeles, CA',
+  travelMode: 'DRIVING',
+  drivingOptions: {
+    departureTime: new Date(Date.now() + N),  // for the time N milliseconds from now.
+    trafficModel: 'optimistic'
+  }
+}
+      }
+
+
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdoSjYOwfGUrzwAz-k4zZEfO5z1EFqx2g&callback=initMap"
+    async defer></script>
+
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+	
+</body>
+</html>
