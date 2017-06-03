@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+  <html lang ="en">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Compute Commute</title>
+      <!-- Resetting Browser default style -->
+      <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+      <!-- Bootstrap Stylesheet; Latest compiled and minified CSS --> 
+      <link href='https://fonts.googleapis.com/css?family=Walter+Turncoat' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+      <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+      <script src='assets/javascript/bootstrap.js'></script>
+      <!-- Custom Stylesheet -->
+      <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+      <!--  -->
+      <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+      <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+      <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    </head>
+    <body>
+      <div class="container well well-lg">
+       <div class="row text-left text-justify">
+
+        <div id="title" class="col-md-12 ">
+          <i class="glyphicon glyphicon-road"></i><i class="glyphicon glyphicon-usd"></i><h1>Compute Commute</h1>
+        </div> 
+        </div>
+        <div class="row well well-lg">  
+          <div id="intro" class="col-md-10 col-md-offset-1">
+          <p class="lead intro"><h4><em>Spending too much money on the gas?</em> <i class="glyphicon glyphicon-fire"></i>  Ever wonder how much would the gas cost going places? Well, the answer is in this little app which calculates the cost of gas before you travel. Now your travel finances are in your own hand!</h4></p>
+          </div>   
+        </div>      
+      <!-- User Input collection section -->
+      <div class="section userInput">
+        <div class="row well well-lg">
+          <!-- User Input Panel Heading-->
+          <div class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">User Input</h3>
+              </div>
+                <div class="panel-body">
+              <!-- User Input Form -->
+              <form role="form">
+                <div class="form-group">
+                    <label for="text">Starting Address</label>
+                      <input type="text" required autofocus placeholder="Please type your home address or originating address" class="form-control" id="startAddr">
+                </div>
+                  <div class="form-group">
+                    <label for="text">Destination Address</label>
+                      <input type="text" required autofocus placeholder="Please type your destination address" class="form-control" id="destAddr">
+                  </div>
+                  <div class="form-group">
+                    <label for="text">Vehicle Type?</label>
+                      <input type="text" required autofocus list="Vehicle-Type" placeholder="Please select Vehicle Type" class="form-control" id="vehTypeInput">
+                      <datalist id="Vehicle-Type">
+                        <option value="Car">
+                        <option value="Suburban">
+                        <option value="SUV">
+                        <option value="Pick-up Truck">
+                        <option value="Full Size Truck">
+                      </datalist>                   
+                  </div>
+                               
+                  <button type="button" class="btn btn-primary" id="addInput">Submit</button>
+              </form>
+
+                </div> <!-- closes panel-body -->
+              </div> <!-- closes panel-primary -->
+            </div> <!-- closes col-md-10 -->
+          </div> <!-- closes row -->
+        </div> <!-- closes User Input Section -->
+
+      <!--<div class="container Google Map">-->
+        <div class="section googleMap">
+          <div class="row well well-lg">
+            <!-- Google Map Panel-->
+            <div class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Google Map</h3>
+                </div>
+                <div class="panel-body">
+                  <!-- Setting up div to display google map; responsive map with scroll -->
+                  <div id="map-canvas" alt="My Google Map">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7098.94326104394!2d78.0430654485247!3d27.172909818538997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1385710909804" frameborder="no" scrolling="no"></iframe></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>          
+      <!--<div class="container endResults">-->
+        <div class="section results">
+          <div class="row well well-lg">
+            <!-- Results Panel-->
+            <div class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Drive Information</h3>
+                </div>
+                <div class="panel-body">
+                  <!-- Presenting Results from APIs-->
+                  <table class=" row driveInfo">
+                    <th class="col-md-3 col-lg-3 milesTraveled"><strong>Miles Traveled</strong></th>
+                    <th class="col-md-3 col-lg-3 gasUsed"><strong>Gas Used</strong></th>
+                    <th class="col-md-3 col-lg-3 gasCost"><strong>Gas Cost $ (Avg)</strong></th>
+                    <th class="col-md-3 col-lg-3 moneySpent"><strong>Spent $</strong></th>
+                  </table>
+
+                </div>  <!-- closes panel-body -->
+              </div> <!-- closes panel-default -->
+            </div> <!-- closes col-lg-6 -->
+          </div> <!-- closes row -->
+        </div> <!-- closes container 'results' -->
+      </div>
+    <!--    <script src="assets/javascript/script.js"></script>  -->
+    </body>
+</html>
