@@ -66,6 +66,10 @@
         display: inline;
       }
 
+      #mapLoc {
+        text-align: center;
+      }
+
     </style>
 
 
@@ -134,15 +138,12 @@
 
             <!-- Results Panel-->
             <div class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
-              <div class="panel panel-primary">
+                  
+                   <div class="panel panel-primary">
+                <!--       <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7098.94326104394!2d78.0430654485247!3d27.172909818538997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1385710909804" width="600" height="450" frameborder="0" style="border:0"></iframe> -->
+                  </div>
 
 
-                <div class="panel-body" id="map">
-
-
-
-                </div>  <!-- closes panel-body -->
-              </div> <!-- closes panel-default -->
             </div> <!-- closes col-lg-6 -->
           </div> <!-- closes row -->
 
@@ -171,19 +172,54 @@
           </div> <!-- closes row -->
 
 
+
         </div> <!-- closes container 'results' -->
 
       </div>
 
+<div id="map"></div>
+
+
 
 <script type="text/javascript">
         
+
+      //         function initMap() {
+
+      //   // load the map
+      //   map = new google.maps.Map(document.getElementById('map'), {
+      //     center: {lat: 40, lng: -100},
+      //     zoom: 4,
+      //     styles: mapStyle
+      //   });
+
+      //   var mapStyle = [{
+      //     'featureType': 'all',
+      //     'elementType': 'all',
+      //     'stylers': [{'visibility': 'off'}]
+      //   }, {
+      //     'featureType': 'landscape',
+      //     'elementType': 'geometry',
+      //     'stylers': [{'visibility': 'on'}, {'color': '#fcfcfc'}]
+      //   }, {
+      //     'featureType': 'water',
+      //     'elementType': 'labels',
+      //     'stylers': [{'visibility': 'off'}]
+      //   }, {
+      //     'featureType': 'water',
+      //     'elementType': 'geometry',
+      //     'stylers': [{'visibility': 'on'}, {'hue': '#5f94ff'}, {'lightness': 60}]
+      //   }];
+      // }
+
 
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 33.448376, lng: -112.074036},
           zoom: 13
         });
+
+
 
         var input = document.getElementById('pac-input');
 
@@ -229,12 +265,17 @@
               place.formatted_address;
           infowindow.open(map, marker);
         });
+
       }
 
 
 </script>
 
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdoSjYOwfGUrzwAz-k4zZEfO5z1EFqx2g&callback=initMap"></script>
 
-    <!--    <script src="assets/javascript/script.js"></script>  -->
+
+   <script src="assets/javascript/script.js"></script> 
+
     </body>
 </html>
