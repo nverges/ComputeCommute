@@ -61,3 +61,11 @@ th.col-md-3.col-lg-3.milesTraveled, th.col-md-3.col-lg-3.gasUsed, th.col-md-3.co
     text-align: left;
     width: 30%;
 }
+iframe {
+    width:895px;
+    height:400px;
+    background: yellow; 
+}
+#map-canvas {
+    overflow-x: auto;
+}
