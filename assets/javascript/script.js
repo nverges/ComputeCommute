@@ -17,7 +17,7 @@ $(document).ready(function() {
 
 	getDetails();
 
-	// 
+	// Get gas station prices
 	function getDetails() {
 		let address = '555 S Galleria Way, Chandler, AZ';
 
@@ -30,10 +30,10 @@ $(document).ready(function() {
 			homeLatLng = results[0].geometry.location;
 			console.log('homeLatLng: ' + homeLatLng);
 
-			// request object used to search for gas stations withi a 500 meter radius
+			// request object used to search for gas stations within a 2000 meter radius
 			let request = {
 				location: homeLatLng,
-				radius: '2500',
+				radius: '2000',
 				type: 'gas_station'
 			}
 			console.log(request);
